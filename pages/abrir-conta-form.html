@@ -89,7 +89,9 @@
                         o trecho final \d{2} agrupa um número de 0 a 9 por duas vezes.
 
                      -->
-
+                     <!-- 
+                        Expressao regular para CNPJ pattern="\d{2}\.?\d{3}\.?\d{3}\/?\d{4}\-?\d{2}"
+                      -->
                     <input name="cpf" id="cpf" class="campo__escrita campo__escrita--menor" type="text" minlength="11"
                         maxlength="14" required pattern="\d{3}\.?\d{3}\.?\d{3}\-?\d{2}" />
                     <span class="mensagem-erro"></span>
