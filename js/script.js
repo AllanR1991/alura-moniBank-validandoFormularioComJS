@@ -2,7 +2,7 @@ import ehUmCPF from "./valida-cpf.js";
 import ehMaiorDeIdade from "./valida-idade.js";
 
 const camposDoFormulario = document.querySelectorAll("[required]");
-
+const formulario = document.querySelector("[data-formulario]");
 
 
 const tiposDeErro = [
@@ -93,3 +93,23 @@ function verificaCampo(campo){
         mensagemErro.textContent = "";
     }
 }
+
+
+formulario.addEventListener("submit", (e)=>{
+    e.preventDefault();
+
+    const listaRespostas ={
+        /**
+         * Por exemplo, se você tem um elemento <input> com o atributo name="nome" e o usuário digita algo nesse campo, você pode obter o valor digitado usando evento.target.elements["nome"].value
+         */
+        "nome": e.target.elements["nome"].value,
+        "email": e.target.elements["email"].value,
+        "rg": e.target.elements["rg"].value,
+        "cpf": e.target.elements["cpf"].value,
+        "aniversario": e.target.elements["aniversario"].value,
+    }
+
+    localStorage.setItem("cadastro", JSON.stringify(listaRespostas));
+
+    window.location.href = './abrir-conta-form-2.html';
+})
