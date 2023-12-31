@@ -2,9 +2,15 @@ export default function ehMaiorDeIdade(campo) {
     const dataNascimento = new Date (campo.value);
 
 
-    validaIdade(dataNascimento);
+    if(!validaIdade(dataNascimento)){
+        /**
+         * Defini uma mensagem de erro customizada.
+         * https://developer.mozilla.org/en-US/docs/Web/API/HTMLObjectElement/setCustomValidity
+         */
+        campo.setCustomValidity('O usuário não é maio de idade');
+    }
 
-    console.log(validaIdade(dataNascimento));
+    
 }
 
 function validaIdade(data){
