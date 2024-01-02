@@ -60,6 +60,7 @@ camposDoFormulario.forEach(
 
 function verificaCampo(campo){
     let mensagem = "";
+    campo.style.border = "";
     /**
      * Defini o setCustomValidity como "", para que a mensagem do CPF e idade sejam apagadas.
      */
@@ -77,6 +78,7 @@ function verificaCampo(campo){
          */
         if(campo.validity[erro]){
             mensagem = mensagens[campo.name][erro];
+            campo.style.border = "2px solid red";
             console.log(mensagem);
         }
     })
